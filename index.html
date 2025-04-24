@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-sDodomale=1.0">
+    <meta name="description" content="Professional portfolio of Samwel Frank, experienced web developer specializing in responsive design, JavaScript frameworks, and modern web technologies.">
+    <meta name="keywords" content="web developer, portfolio, HTML5, CSS3, JavaScript, React, front-end development">
+    <meta name="author" content="Samwel Frank">
+    <title>Samwel Frank | Web Developer</title>
+    <style>
+        /* Basic styling for professional appearance */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .profile-img {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skills {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .skills h2 {
+            color: white;
+        }
+        
+        .skills-container {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .skills-column {
+            flex: 1;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-Dodomard {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-Dodomard:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Image map styling */
+        .tech-map {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-content, .skills-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+        }
+
+        body.dark-mode {
+            --primary-color: #ecf0f1;
+            --secondary-color: #2980b9;
+            --accent-color: #c0392b;
+            --light-color: #2c3e50;
+            --dark-color: #ecf0f1;
+            color: #ecf0f1;
+            background-color: var(--light-color);
+        }
+
+        body.dark-mode nav a {
+            color: #fff;
+        }
+
+        body.dark-mode .contact-info,
+        body.dark-mode .contact-form,
+        body.dark-mode .project-Dodomard {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        body.dark-mode footer {
+            background-color: #1a252f;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Samwel <span>Frank</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#survey">Survey</a></li>
+            </ul>
+            <button id="toggleMode" class="btn" style="margin-left: 1rem;">🌙 Dark Mode</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Building Digital Experiences That Matter</h1>
+        <p>I'm a passionate web developer specializing in creating responsive, user-friendly websites and Applications with clean, efficient code.</p>
+        <div>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-accent">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello! I'm Samwel Frank, a professional web developer with over 5 years of experience creating modern web Applications. I specialize in front-end development but also have experience with full-stack projects.</p>
+                <p>My approach combines techniDodomal expertise with an eye for design, ensuring that the websites I build are not only functional but also visually appealing and user-friendly.</p>
+                <p>When I'm not coding, you Dodoman find me hiking, reading about new technologies, or contributing to open-source projects.</p>
+                <h3>Education & Certification:</h3>
+                <ul>
+                    <li>Bachelor's Degree in Computer Science - XYZ University (2015-2019)</li>
+                    <li>Certified JavaScript Developer - W3Schools (2020)</li>
+                    <li>React Nanodegree - Udacity (2021)</li>
+                </ul>
+            </div>
+            <img src="/images/webDeveloper.jpeg" alt="Samwel Frank - Web Developer" class="profile-img">
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skills-column">
+                <h3>Front-end Technologies</h3>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js & Redux</li>
+                    <li>Vue.js</li>
+                    <li>Responsive Design</li>
+                    <li>CSS Preprocessors (SASS, LESS)</li>
+                </ul>
+            </div>
+            <div class="skills-column">
+                <h3>Back-end & Other</h3>
+                <ul>
+                    <li>Node.js & Express</li>
+                    <li>Python & Django</li>
+                    <li>RESTful APIs</li>
+                    <li>GraphQL</li>
+                    <li>Git & Version Control</li>
+                    <li>Agile Methodologies</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Image Map -->
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web development technologies" class="tech-map" usemap="#techmap">
+        <map name="techmap">
+            <area shape="rect" coords="0,0,300,200" href="https://developer.mozilla.org/en-US/docs/Web/HTML" alt="HTML5" target="_blank">
+            <area shape="rect" coords="300,0,600,200" href="https://developer.mozilla.org/en-US/docs/Web/CSS" alt="CSS3" target="_blank">
+            <area shape="rect" coords="0,200,300,400" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" alt="JavaScript" target="_blank">
+            <area shape="rect" coords="300,200,600,400" href="https://reactjs.org/" alt="React" target="_blank">
+        </map>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <article class="project-Dodomard">
+                <img src="/images/eCommerceimg.jpeg" alt="E-commerce Website" class="project-img">
+                <div class="project-info">
+                    <h3>E-commerce Platform</h3>
+                    <p>A full-featured online store built with React, Node.js, and MongoDB. Includes product Dodomatalog, shopping Dodomart, and secure checkout.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </article>
+            <article class="project-Dodomard">
+                <img src="/images/taskManagement.jpg" alt="Task Management App" class="project-img">
+                <div class="project-info">
+                    <h3>Task Management App</h3>
+                    <p>A productivity Application built with Vue.js and Firebase, featuring real-time updates and team collaboration tools.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </article>
+            <article class="project-Dodomard">
+                <img src="/images/restaurant.jpeg" alt="Restaurant Website" class="project-img">
+                <div class="project-info">
+                    <h3>Restaurant Website</h3>
+                    <p>A responsive website for a loDodomal restaurant with online reservations, menu display, and gallery. Built with HTML5, CSS3, and JavaScript.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Feel free to reach out for project inquiries or just to say hello!</p>
+                <address>
+                    <p><strong>Email:</strong> <a href="mailto:Samwel.Frank@example.com">Samwel.Frank@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+255123456789">+255 (234) 567-890</a></p>
+                    <p><strong>Dodoma:</strong> University of Dodoma (UDOM), Dodoma</p>
+                </address>
+                
+                <!-- Google Map iframe -->
+                <iframe 
+                     src="https://www.google.com/maps/embed?pb=..." style="width: 100%; height: 300px; border: 0;" allowfullscreen loading="lazy">
+                </iframe>
+
+            </div>
+            <div class="contact-form">
+                <h3>Send Me a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="survey">
+        <h2>Quick Survey</h2>
+        <div class="contact-info" style="max-width: 800px; margin: 0 auto;">
+            <p>Help me improve my services by answering a few questions:</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>What type of project are you interested in?</label>
+                    <select name="project-type" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">Select an option</option>
+                        <option value="website">Website Development</option>
+                        <option value="webapp">Web Application</option>
+                        <option value="ecommerce">E-commerce Solution</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>What's your timeline for this project?</label>
+                    <div>
+                        <input type="radio" id="timeline-1" name="timeline" value="1month">
+                        <label for="timeline-1" style="display: inline;">&lt; 1 month</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="timeline-2" name="timeline" value="3months">
+                        <label for="timeline-2" style="display: inline;">1-3 months</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="timeline-3" name="timeline" value="6months">
+                        <label for="timeline-3" style="display: inline;">3-6 months</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="timeline-4" name="timeline" value="flexible">
+                        <label for="timeline-4" style="display: inline;">Flexible</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Which features are most important for your project? (Select all that apply)</label>
+                    <div>
+                        <input type="checkbox" id="feature-1" name="features" value="responsive">
+                        <label for="feature-1" style="display: inline;">Responsive Design</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="feature-2" name="features" value="seo">
+                        <label for="feature-2" style="display: inline;">SEO Optimization</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="feature-3" name="features" value="ecommerce">
+                        <label for="feature-3" style="display: inline;">E-commerce Functionality</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="feature-4" name="features" value="cms">
+                        <label for="feature-4" style="display: inline;">CMS Integration</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="budget">What's your estimated budget range?</label>
+                    <input type="range" id="budget" name="budget" min="1000" max="10000" step="1000" style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>$1,000</span>
+                        <span>$10,000+</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit Survey</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" aria-label="GitHub">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+            <a href="https://codepen.io" target="_blank" aria-label="CodePen">CodePen</a>
+        </div>
+        <p>&copy; 2025 Samwel Frank. All rights reserved.</p>
+        <p>Made with &hearts; using HTML5, CSS3, and JavaScript</p>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById('toggleMode');
+        const body = document.body;
+    
+        // Check saved mode in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
+    
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+    
+</body>
+</html>
